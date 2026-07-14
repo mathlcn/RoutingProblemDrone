@@ -1,7 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "Stop.h"
+
+class Stop;
 
 class Route {
     public:

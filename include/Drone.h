@@ -1,10 +1,11 @@
 #pragma once
 
-#include "Depot.h"
 #include "Stop.h"
-#include "Package.h"
-#include "Route.h"
 #include "Position.h"
+
+class Depot;
+class Package;
+class Route;
 
 
 class Drone {

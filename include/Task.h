@@ -1,11 +1,10 @@
 #pragma once
 
-#include "Package.h"
-#include "Stop.h"
-#include "Drone.h"
 #include "TaskStatus.h"
 
-
+class Stop;
+class Drone;
+class Package;
 
 class Task {
     public:

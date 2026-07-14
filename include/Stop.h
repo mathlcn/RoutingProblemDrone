@@ -3,7 +3,8 @@
 #include <vector>
 #include "Package.h"
 #include "Position.h"
-#include "Task.h"
+
+class Task;
 
 class Stop {
     public:

@@ -1,4 +1,5 @@
 #include "Stop.h"
+#include "Task.h"
 #include <iostream>
 #include <vector>
 

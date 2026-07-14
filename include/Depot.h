@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Stop.h"
-#include "Drone.h"
 #include <vector>
+
+class Drone;
 
 class Depot : public Stop {
 public:
