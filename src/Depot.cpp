@@ -4,7 +4,7 @@
 #include <vector>
 
 Depot::Depot(int stopId, Position stopPosition, std::vector<Package*> stopPackages)
-    : Stop(stopId, stopPosition, stopPackages) {}
+    : Stop(stopId, stopPosition) {}
 
 void Depot::displayInfo() const {
     Stop::displayInfo();
