@@ -6,18 +6,6 @@
 Route::Route(const std::vector<Stop *> &routeStops)
 : stops(routeStops) {}
 
-int Route::getCurrentStopIndex() const {
-    return currentStopIndex;
-}
-
-std::vector<Stop*> Route::getStops() const {
-    return stops;
-}
-
-void Route::setCurrentStopIndex(int index) {
-    currentStopIndex = index;
-}
-
 Stop* Route::nextStop() {
     if (currentStopIndex < stops.size()) {
         return stops[currentStopIndex++];

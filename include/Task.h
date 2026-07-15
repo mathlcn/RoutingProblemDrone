@@ -13,13 +13,14 @@ class Task {
         virtual ~Task() = default;
         
         
-        int getId() const;
-        int getDropId() const;
-        int getPackageId() const;
-        TaskStatus getStatus() const;
-        Stop* getDestinations() const;
+        int getId() const { return id; }
+        int getDropId() const { return dropId; }
+        int getPackageId() const { return packageId; }
+        TaskStatus getStatus() const { return status; }
+        Stop* getDestinations() const { return destinations; }
 
-        void setStatus(TaskStatus newStatus);
+        void setStatus(TaskStatus newStatus) { status = newStatus; }
+        void setDestinations(Stop* newDestinations) { destinations = newDestinations; }
 
         virtual void executeTask(Drone* drone) = 0;
         virtual void displayInfo() const;

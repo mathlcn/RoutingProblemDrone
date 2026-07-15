@@ -9,32 +9,6 @@ Drone::Drone(int droneId, float droneCapacity, float droneBatteryLife, Position 
  : id(droneId), capacity(droneCapacity), batteryLife(droneBatteryLife), currentPosition(droneCurrentPosition), originDepot(droneOriginDepot){}
 
 
-int Drone::getId() const
-{
-    return id;
-}
-
-float Drone::getCapacity() const
-{
-    return capacity;
-}
-
-float Drone::getBatteryLife() const
-{
-    return batteryLife;
-}
-
-Position Drone::getCurrentPosition() const
-{
-    return currentPosition;
-}
-
-Route* Drone::getCurrentRoute() const
-{
-    return currentRoute;
-}
-
-
 bool Drone::addPackage(Package* package)
 {
     if (currentPackage == nullptr && package != nullptr) {

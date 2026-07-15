@@ -6,11 +6,6 @@
 Stop::Stop(int stopId, Position stopPosition, std::vector<Package*> stopPackages)
     : id(stopId), position(stopPosition), packages(stopPackages) {}
 
-int Stop::getId() const {
-    return id;
-}
-
-
 void Stop::addPackage(Package* package) {
     if (package != nullptr) {
         packages.push_back(package);

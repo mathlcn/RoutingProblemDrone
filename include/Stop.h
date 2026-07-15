@@ -11,13 +11,16 @@ class Stop {
         Stop(int stopId, Position stopPosition, std::vector<Package*> stopPackages);
         virtual ~Stop() = default;
 
-        int getId() const;
+        int getId() const { return id; }
+        Position getPosition() const { return position; }
+        std::vector<Package*> getPackages() const { return packages; }
+        Stop* getNextStop() const { return nextStop; }
 
         void addPackage(Package* package);
         Package* removePackage(int packageId);
-        Stop* getNextStop() const;
 
-        Task* createTask(int packageId) const;
+        void setPosition(Position newPosition) { position = newPosition; }
+        void setPackages(const std::vector<Package*>& newPackages) { packages = newPackages; }
 
         virtual void displayInfo() const;
     
@@ -25,4 +28,5 @@ class Stop {
         const int id;
         Position position;
         std::vector<Package*> packages;
+        Stop* nextStop = nullptr;
 };

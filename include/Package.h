@@ -1,9 +1,11 @@
 #pragma once
 
 class Package {
-public:explicit Package(int packageId,float packageWeight);
+public:
+    explicit Package(int packageId, float packageWeight);
 
-    int getId() const;
+    int getId() const { return id; }
+    float getWeight() const { return weight; }
 
     void displayInfo() const;
 
