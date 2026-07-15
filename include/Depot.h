@@ -7,8 +7,8 @@ class Drone;
 
 class Depot : public Stop {
 public:
-    Depot(int stopId, Position stopPosition, std::vector<Package> stopPackages);
+    Depot(int stopId, Position stopPosition, std::vector<Package*> stopPackages);
     void displayInfo() const override;
 private:
-    std::vector<Drone> drones;
+    std::vector<Drone*> drones;
 };

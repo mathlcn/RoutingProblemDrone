@@ -8,10 +8,10 @@ class Route {
     public:
         Route(const std::vector<Stop*>& routeStops);
 
-        int getCurrentStopIndex() const { return currentStopIndex; }
-        std::vector<Stop*> getStops() const { return stops; }
+        int getCurrentStopIndex() const;
+        std::vector<Stop*> getStops() const;
 
-        void setCurrentStopIndex(int index) { currentStopIndex = index; }
+        void setCurrentStopIndex(int index);
 
         Stop* nextStop();
         void displayInfo() const;

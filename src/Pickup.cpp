@@ -1,4 +1,7 @@
 #include "Pickup.h"
+#include "Drone.h"
+#include "Stop.h"
+#include "Route.h"
 #include <iostream>
 
 void Pickup::executeTask(Drone *drone)
@@ -13,13 +16,15 @@ void Pickup::executeTask(Drone *drone)
         }
         Package* p = nextStop->removePackage(getPackageId());
         currentStatus = TaskStatus::COMPLETED;
-        if(drone->addPackage(*p)) {
+        if (p != nullptr && drone->addPackage(p)) {
             Pickup::setStatus(TaskStatus::COMPLETED);
         }
         else {
             std::cout << "Drone already has a package assigned, cannot pickup package." << std::endl;
             Pickup::setStatus(TaskStatus::PENDING);
-            nextStop->addPackage(*p);
+            if (p != nullptr) {
+                nextStop->addPackage(p);
+            }
             drone->getCurrentRoute()->setCurrentStopIndex(drone->getCurrentRoute()->getStops().size() - 1); // Return the drone to the depot by setting the current stop index to the last stop in the route
         }
     }

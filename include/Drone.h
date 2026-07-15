@@ -18,13 +18,13 @@ class Drone {
         Position getCurrentPosition() const;
         Route* getCurrentRoute() const;
 
-        bool addPackage(const Package& package);
+        bool addPackage(Package* package);
         void displayInfo() const;
 
     private:
         const int id;
-        const Package* currentPackage;
-        const Depot* originDepot;
+        Package* currentPackage;
+        Depot* originDepot;
         
         float capacity;
         float batteryLife;

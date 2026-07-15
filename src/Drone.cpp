@@ -35,10 +35,10 @@ Route* Drone::getCurrentRoute() const
 }
 
 
-bool Drone::addPackage(const Package& package)
+bool Drone::addPackage(Package* package)
 {
-    if (currentPackage == nullptr) {
-        currentPackage = &package;
+    if (currentPackage == nullptr && package != nullptr) {
+        currentPackage = package;
         return true; // Success
     } else {
         std::cout << "Drone already has a package assigned." << std::endl;

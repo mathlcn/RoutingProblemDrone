@@ -14,17 +14,20 @@ class Task {
         
         
         int getId() const;
+        int getDropId() const;
         int getPackageId() const;
-        Stop nextStop() const;    
         TaskStatus getStatus() const;
+        Stop* getDestinations() const;
+
         void setStatus(TaskStatus newStatus);
-        virtual void executeTask(Drone* drone);
+
+        virtual void executeTask(Drone* drone) = 0;
         virtual void displayInfo() const;
 
     private:
         const int id;
         const int dropId;
-        int packageId;
+        const int packageId;
         TaskStatus status;
         Stop* destinations;
 };
