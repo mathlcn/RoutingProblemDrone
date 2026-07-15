@@ -3,15 +3,13 @@
 #include <iostream>
    
 
-Route::Route(const std::vector<Stop *> &routeStops)
-: stops(routeStops) {}
+Route::Route(const std::vector<Stop*>& routeStops) : stops(routeStops), currentStopIndex(0) {}
 
 Stop* Route::nextStop() {
-    if (currentStopIndex < stops.size()) {
-        return stops[currentStopIndex++];
-    } else {
-        return nullptr; // No more stops in the route
+    if (currentStopIndex >= stops.size() ) {
+        return nullptr;
     }
+    return stops[currentStopIndex];
 }
 
 void Route::displayInfo() const {

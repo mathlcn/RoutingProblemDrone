@@ -3,8 +3,8 @@
 #include <iostream>
 #include <vector>
 
-Stop::Stop(int stopId, Position stopPosition, std::vector<Package*> stopPackages)
-    : id(stopId), position(stopPosition), packages(stopPackages) {}
+Stop::Stop(int stopId, Position stopPosition)
+    : id(stopId), position(stopPosition), packages({}) {}
 
 void Stop::addPackage(Package* package) {
     if (package != nullptr) {

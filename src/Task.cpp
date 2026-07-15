@@ -5,5 +5,5 @@
 
 void Task::displayInfo() const
 {
-    destinations->removePackage(packageId);
+    
 }
