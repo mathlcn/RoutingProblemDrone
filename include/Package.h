@@ -2,7 +2,7 @@
 
 class Package {
 public:
-    explicit Package(int packageId, float packageWeight);
+    explicit Package(int packageId, float packageWeight, int ownerId);
 
     int getId() const { return id; }
     float getWeight() const { return weight; }
@@ -11,7 +11,9 @@ public:
 
 private:
     const int id;
+    const int owner;
     float weight;
+    
 };
 
 
