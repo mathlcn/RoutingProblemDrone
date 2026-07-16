@@ -1,6 +1,9 @@
 #include "Customer.h"
 #include <iostream>
 
+Customer::Customer(int customerId, Position customerPosition) 
+: Stop(customerId, customerPosition) {}
+
 void Stop::displayInfo() const {
     std::cout << "Stop ID: " << id << ", Position: (" << position.x << ", " << position.y << ")" << std::endl;
     std::cout << "Packages at this stop:" << std::endl;

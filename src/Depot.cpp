@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-Depot::Depot(int stopId, Position stopPosition, std::vector<Package*> stopPackages)
+Depot::Depot(int stopId, Position stopPosition)
     : Stop(stopId, stopPosition) {}
 
 void Depot::displayInfo() const {
