@@ -1,5 +1,4 @@
 #include "Package.h"
-#include "Customer.h"
 #include <iostream>
 
 Package::Package(int packageId, float packageWeight, int ownerId)
