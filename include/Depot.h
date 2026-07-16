@@ -11,7 +11,7 @@ public:
 
     std::vector<Drone*> getDrones() const;
     void addDrone(Drone* drone);
-    void removeDrone(int droneId);
+    Drone* removeDrone(int droneId);
 
     void displayInfo() const override;
 private:
