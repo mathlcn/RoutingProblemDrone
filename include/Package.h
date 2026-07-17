@@ -6,6 +6,7 @@ public:
 
     int getId() const { return id; }
     float getWeight() const { return weight; }
+    int getOwner() const { return owner; }
 
     void displayInfo() const;
 
