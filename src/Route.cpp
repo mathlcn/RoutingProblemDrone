@@ -15,6 +15,8 @@ Stop* Route::nextStop() {
 void Route::displayInfo() const {
     std::cout << "Route Information:" << std::endl;
     for (const Stop *stop : stops) {
-        stop->displayInfo();
+        if (stop != nullptr) {
+            stop->displayInfo();
+        }
     }
 }

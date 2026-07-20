@@ -7,5 +7,5 @@ class Customer : public Stop {
     public:
         Customer(int customerId, Position customerPosition);
 
-        void Customer::displayInfo() const override;
+        void displayInfo() const override;
 };

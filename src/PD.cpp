@@ -1,19 +1,17 @@
-#include "Drop.h"
+#include "PD.h"
 #include "Stop.h"
 #include <iostream>
 
-void Drop::executeTask(Drone *drone)
+void PD::executeTask(Drone* drone)
 {
-    TaskStatus currentStatus = getStatus();
-    if (currentStatus == TaskStatus::PENDING) {
-    }
+    (void)drone;
 }
 
-void Drop::displayInfo() const
+void PD::displayInfo() const
 {
     std::cout << "Task ID: " << getId() << std::endl;
     std::cout << "Package ID: " << getPackageId() << std::endl;
-    std::cout << "Task type: DROP" << std::endl;
+    std::cout << "Task type: PD" << std::endl;
 
     if (getDestinations() != nullptr) {
         std::cout << "Destination Stop ID: " << getDestinations()->getId() << std::endl;
