@@ -20,6 +20,12 @@ bool Drone::addPackage(Package* package)
     }
 }
 
+Package* Drone::removePackage() {
+   Package* p = Drone::getCurrentPackage();
+   setCurrentPackage(nullptr);
+   return p;
+}
+
 void Drone::displayInfo() const
 {
     std::cout << "Drone ID: " << id << std::endl;

@@ -26,6 +26,7 @@ class Drone {
         void setCurrentRoute(Route* route) { currentRoute = route; }
 
         bool addPackage(Package* package);
+        Package* removePackage();
         void displayInfo() const;
 
     private:
