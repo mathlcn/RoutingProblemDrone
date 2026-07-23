@@ -15,7 +15,7 @@ void Drop::executeTask(Drone *drone)
     Stop* nextStop = drone->getCurrentRoute()->nextStop();
     if (nextStop == nullptr) {
         Drop::setStatus(TaskStatus::PENDING);
-        std::cout << "No more stops in the route, cannot pickup package." << std::endl;
+        std::cout << "No more stops in the route." << std::endl;
         return;
     }
 
