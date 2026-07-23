@@ -40,8 +40,8 @@ void PD::executeDrop(Drone* drone, Stop* nextStop) {
         return;
     }
     nextStop->addPackage(p);
-    PD::setStatus(TaskStatus::COMPLETED);
-    std::cout << "Drop done successfully." << std::endl;
+    PD::setStatus(TaskStatus::DROP_DONE);
+    std::cout << "PD Drop done successfully." << std::endl;
     return;
 }
 
@@ -59,7 +59,7 @@ void PD::executePickup(Drone* drone, Stop* nextStop) {
     }
     drone->setCurrentPackage(p);
     PD::setStatus(TaskStatus::COMPLETED);
-    std::cout << "PD Drop done successfully." << std::endl;
+    std::cout << "PD Pickup done successfully." << std::endl;
 }
 
 void PD::displayInfo() const
