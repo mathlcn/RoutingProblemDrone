@@ -25,6 +25,7 @@ void Pickup::executeTask(Drone *drone)
         Pickup::setStatus(TaskStatus::PENDING);
         return;
     }
+    drone->setCurrentPosition(nextStop->getPosition()); // drone fly
 
     if (!drone->addPackage(p)) {
         std::cout << "Drone already has a package assigned, cannot pickup package." << std::endl;

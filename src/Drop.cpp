@@ -18,6 +18,7 @@ void Drop::executeTask(Drone *drone)
         std::cout << "No more stops in the route." << std::endl;
         return;
     }
+    drone->setCurrentPosition(nextStop->getPosition()); // drone fly
 
     Package* p = drone->removePackage();
     if (p == nullptr) {

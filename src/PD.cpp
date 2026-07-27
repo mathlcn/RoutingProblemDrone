@@ -14,10 +14,11 @@ void PD::executeTask(Drone* drone)
 
     Stop* nextStop = drone->getCurrentRoute()->nextStop();
     if (!nextStop) {
-        PD::setStatus(TaskStatus::PENDING);
         std::cout << "No more stops in the route." << std::endl;
         return;
     }
+
+    drone->setCurrentPosition(nextStop->getPosition()); // drone fly
 
     if (currentStatus == TaskStatus::PENDING) {
         std::cout << "Starting PD drop." << std::endl;
