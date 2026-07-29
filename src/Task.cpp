@@ -4,8 +4,8 @@
 #include "Package.h"
 #include <iostream>
 
-Task::Task(int taskId, int taskPackageId, int taskStopId)
-    : id(taskId), packageId(taskPackageId), dropId(taskStopId), status(TaskStatus::PENDING), destinations(nullptr) {}
+Task::Task(int taskId, int taskPackageId, Stop* destinations)
+    : id(taskId), packageId(taskPackageId), destinations(destinations), status(TaskStatus::PENDING) {}
 
 void Task::displayInfo() const
 {

@@ -20,8 +20,7 @@ class Stop {
         void addPackage(Package* package);
         Package* removePackage(int packageId);
 
-        virtual void displayInfo() const = 0;
-    
+        virtual void displayInfo() = 0;
     protected:
         const int id;
         Position position;

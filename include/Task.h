@@ -9,12 +9,11 @@ class Package;
 class Task {
     public:
         
-        Task(int taskId, int taskPackageId, int taskStopId);
+        Task(int taskId, int taskPackageId, Stop* taskStop);
         virtual ~Task() = default;
         
         
         int getId() const { return id; }
-        int getDropId() const { return dropId; }
         int getPackageId() const { return packageId; }
         TaskStatus getStatus() const { return status; }
         Stop* getDestinations() const { return destinations; }
@@ -23,11 +22,10 @@ class Task {
         void setDestinations(Stop* newDestinations) { destinations = newDestinations; }
 
         virtual void executeTask(Drone* drone) = 0;
-        virtual void displayInfo() const;
+        virtual void displayInfo() const = 0;
 
     private:
         const int id;
-        const int dropId;
         const int packageId;
         TaskStatus status;
         Stop* destinations;
