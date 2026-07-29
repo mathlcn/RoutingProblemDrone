@@ -7,8 +7,14 @@ Depot::Depot(int stopId, Position stopPosition)
     : Stop(stopId, stopPosition) {}
 
 void Depot::displayInfo() const {
-    Stop::displayInfo();
-    std::cout << "This is a depot." << std::endl;
+    std::cout << "Depot ID: " << id << ", Position: (" << position.x << ", " << position.y << ")" << std::endl;
+    std::cout << "Packages at this depot:" << std::endl;
+
+    for (const Package* package : packages) {
+        if (package != nullptr) {
+            package->displayInfo();
+        }
+    }
 }
 
 void Depot::addDrone(Drone* drone) {
