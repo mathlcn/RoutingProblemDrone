@@ -9,7 +9,7 @@ Stop* Route::nextStop() {
     if (currentStopIndex >= stops.size() ) {
         return nullptr;
     }
-    return stops[currentStopIndex];
+    return stops[currentStopIndex++];
 }
 
 void Route::displayInfo() const {

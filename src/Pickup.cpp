@@ -14,7 +14,7 @@ void Pickup::executeTask(Drone *drone)
     
     Stop* nextStop = drone->getCurrentRoute()->nextStop();
     if (nextStop == nullptr) {
-        currentStatus = TaskStatus::PENDING;
+        Pickup::setStatus(TaskStatus::PENDING);
         std::cout << "No more stops in the route." << std::endl;
         return;
     }
