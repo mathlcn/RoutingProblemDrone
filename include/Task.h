@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TaskStatus.h"
+#include <vector>
 
 class Stop;
 class Drone;
@@ -9,17 +10,17 @@ class Package;
 class Task {
     public:
         
-        Task(int taskId, int taskPackageId, Stop* taskStop);
+        Task(int taskId, int taskPackageId, std::vector<Stop*> taskStop);
         virtual ~Task() = default;
         
         
         int getId() const { return id; }
         int getPackageId() const { return packageId; }
         TaskStatus getStatus() const { return status; }
-        Stop* getDestinations() const { return destinations; }
+        std::vector<Stop*> getDestinations() const { return destinations; }
 
         void setStatus(TaskStatus newStatus) { status = newStatus; }
-        void setDestinations(Stop* newDestinations) { destinations = newDestinations; }
+        void setDestinations(std::vector<Stop*> newDestinations) { destinations = newDestinations; }
 
         virtual void executeTask(Drone* drone) = 0;
         virtual void displayInfo() const = 0;
@@ -28,5 +29,5 @@ class Task {
         const int id;
         const int packageId;
         TaskStatus status;
-        Stop* destinations;
+        std::vector<Stop*> destinations;
 };

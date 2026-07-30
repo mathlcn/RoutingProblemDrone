@@ -3,8 +3,9 @@
 #include "Drone.h"
 #include "Package.h"
 #include <iostream>
+#include <vector>
 
-Task::Task(int taskId, int taskPackageId, Stop* destinations)
+Task::Task(int taskId, int taskPackageId, std::vector<Stop*> destinations)
     : id(taskId), packageId(taskPackageId), destinations(destinations), status(TaskStatus::PENDING) {}
 
 void Task::displayInfo() const
@@ -26,10 +27,18 @@ void Task::displayInfo() const
     }
 
     std::cout << std::endl;
-
-    if (getDestinations() != nullptr) {
-        std::cout << "Destination Stop ID: " << getDestinations()->getId() << std::endl;
-    } else {
-        std::cout << "Destination Stop: none" << std::endl;
+    const std::vector<Stop*>& dest = getDestinations();
+    if (dest.empty()) {
+        std::cout << "Destinations is empty." << std::endl;
+        return;
+    }
+    for (size_t i = 0; i < dest.size(); i++) {
+        std::cout << "Destination " << i << ": ";
+        if (dest[i] != nullptr) {
+            std::cout << "Stop ID " << dest[i]->getId();
+        } else {
+            std::cout << "null";
+        }
+        std::cout << std::endl;
     }
 }

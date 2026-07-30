@@ -36,8 +36,9 @@ void Drop::displayInfo() const
     std::cout << "Package ID: " << getPackageId() << std::endl;
     std::cout << "Task type: DROP" << std::endl;
 
-    if (getDestinations() != nullptr) {
-        std::cout << "Destination Stop ID: " << getDestinations()->getId() << std::endl;
+    const std::vector<Stop*> dest = getDestinations();
+    if (!dest.empty() && dest[0] != nullptr) {
+        std::cout << "Destination Stop ID: " << dest[0]->getId() << std::endl;
     } else {
         std::cout << "Destination Stop: none" << std::endl;
     }
