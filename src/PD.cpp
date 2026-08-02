@@ -41,6 +41,7 @@ void PD::executeDrop(Drone* drone, Stop* nextStop) {
         return;
     }
     nextStop->addPackage(p);
+    drone->setCurrentPackage(nullptr);
     PD::setStatus(TaskStatus::DROP_DONE);
     std::cout << "PD Drop done successfully." << std::endl;
     return;

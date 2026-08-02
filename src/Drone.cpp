@@ -6,7 +6,7 @@
 
 
 Drone::Drone(int droneId, float droneCapacity, float droneBatteryLife, Position droneCurrentPosition, Depot *droneOriginDepot)
- : id(droneId), capacity(droneCapacity), batteryLife(droneBatteryLife), currentPosition(droneCurrentPosition), originDepot(droneOriginDepot){}
+ : id(droneId), currentPackage(nullptr), originDepot(droneOriginDepot), capacity(droneCapacity), batteryLife(droneBatteryLife), currentPosition(droneCurrentPosition), currentRoute(nullptr) {}
 
 
 bool Drone::addPackage(Package* package)
